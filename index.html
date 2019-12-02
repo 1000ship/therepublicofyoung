@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html>
 	<head>
+    <script src="./res/js/main.js"></script>
 		<title>영화국 永华国 The Republic of Young 🌒</title>		
 	  	<style>
 	  	
-	  		.top-container {
-		  		background-color: black;
-	  		}
+	  		body {
+          background-color: black;
+          background-image: url("./res/img/water.gif");
+        }
+        
+        .main-container img {
+          width: 100%;
+        }
 	  	</style>
 	</head>
-  <body class="top-container">
+  <body>
   
+    <div class="main-container">
+      <img src="./res/img/therepublicofyoung.png">
+      <a>
+        <img src="./res/img/button1.png">
+      </a>  
+      <a>
+        <img src="./res/img/button2.png">
+      </a>  
+      <a>
+        <img src="./res/img/button3.png">
+      </a>
+    </div>
+
+
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    
     <div>
     	<div id="player"></div>
-	</div>
+	  </div>
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
