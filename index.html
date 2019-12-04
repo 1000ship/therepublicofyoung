@@ -9,7 +9,6 @@
   
     <div id="carousel" class="carousel slide">
       <div class="carousel-inner">
-
         <div class="carousel-item active">
           <div id="main-page" class="row justify-content-center">
               <div class="main-container col-sm-12 col-md-12 col-lg-6 col-xl-4">
@@ -17,10 +16,10 @@
                 <a href="#video" onclick="locationHashChanged();">
                   <img src="./res/img/button1.png">
                 </a>  
-                <a a href="#">
+                <a a href="#" onclick="locationHashChanged();">
                   <img src="./res/img/button2.png">
                 </a>  
-                <a a href="#">
+                <a a href="#" onclick="locationHashChanged();">
                   <img src="./res/img/button3.png">
                 </a>
               </div>
@@ -39,53 +38,6 @@
         </div>
       </div>
     </div>
-
-
-    
-    <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
-
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('video-player', {
-          //height: '360',
-          //width: '640',
-          videoId: '1NS1yxYX6IM',
-          playerVars: {'autoplay':1, 'controls': 0},
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        //event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        /*if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-        */
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
-    </script>
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
