@@ -20,6 +20,7 @@ window.onhashchange = locationHashChanged;
 $('#carousel').carousel({
     interval: false,
     keyboard: false,
+    touch: false,
 });
 
 // for youtube 
@@ -31,11 +32,6 @@ var youtube_player;
 function onYouTubeIframeAPIReady() {
     youtube_player = new YT.Player('video-player', {
         videoId: '1NS1yxYX6IM',
-        events: {
-            'onReady': function(e){
-                e.target.playVideo();
-            },
-        },
-        playerVars: {'autoplay':true, 'controls': 0},
+        playerVars: {'autoplay':0, 'controls': 0},
     });
 }
