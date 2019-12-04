@@ -13,10 +13,6 @@ body[class="lavender"] {
     background-position: center;
 }
 
-.hidden {
-    display: none;
-}
-
 .main-container img {
     width: 100%;
     padding-left: 20px;
