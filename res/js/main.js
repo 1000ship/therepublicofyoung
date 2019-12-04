@@ -1,21 +1,3 @@
-function locationHashChanged() {
-    if( location.hash.length == 0 )
-    {
-        $('#carousel').carousel(0);
-        youtube_player.stopVideo();
-    }
-    else
-        switch( location.hash )
-        {
-            case "#video":
-                $('#carousel').carousel(1);
-                if(youtube_player)
-                   youtube_player.playVideo();
-                break;
-        }
-}
-window.onhashchange = locationHashChanged;
-
 
 $('#carousel').carousel({
     interval: false,

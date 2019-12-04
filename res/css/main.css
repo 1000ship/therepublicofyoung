@@ -1,7 +1,16 @@
 body {
     background-color: black;
-    background-image: url("../img/water.gif");
     background-size: auto 100vh;
+}
+
+body[class="water"] {
+    background-image: url("../img/water.gif");
+    background-position: unset;
+}
+
+body[class="lavender"] {
+    background-image: url("../img/lavender.gif");
+    background-position: center;
 }
 
 .hidden {
@@ -29,4 +38,16 @@ body {
     position: relative;
     top: 50%;
     transform: translate(0%, -80%);
+}
+
+#lavender-page {
+    height: 100vh;
+}
+
+.qrcode-image {
+    width: 65%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
