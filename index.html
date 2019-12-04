@@ -3,50 +3,45 @@
 	<head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./res/css/main.css"/>
-    <script src="./res/js/main.js"></script>
 		<title>영화국 永华国 The Republic of Young 🌒</title>		
 	</head>
   <body>
   
-    <div class="row justify-content-center hidden">
-      <div class="main-container col-sm-12 col-md-12 col-lg-6 col-xl-4">
-        
-        <img class="main-title" src="./res/img/therepublicofyoung.png">
-        
-        <a href="#">
-          <img src="./res/img/button1.png">
-        </a>  
-        <a a href="#">
-          <img src="./res/img/button2.png">
-        </a>  
-        <a a href="#">
-          <img src="./res/img/button3.png">
-        </a>
+    <div id="carousel" class="carousel slide">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div id="main-page" class="row justify-content-center">
+              <div class="main-container col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                <img class="main-title" src="./res/img/therepublicofyoung.png">
+                <a href="#video" onclick="locationHashChanged();">
+                  <img src="./res/img/button1.png">
+                </a>  
+                <a a href="#">
+                  <img src="./res/img/button2.png">
+                </a>  
+                <a a href="#">
+                  <img src="./res/img/button3.png">
+                </a>
+              </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+          <div id="video-page" class="row justify-content-center">
+              <div class="video-container col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                <img class="popup" src="./res/img/popup1.png">
+                <div class="video-area align-middle embed-responsive embed-responsive-16by9">
+                    <div id="video-player" class="embed-responsive-item"></div>
+                  </div>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
 
-    <div class="row justify-content-center ">
-        <div class="main-container col-sm-12 col-md-12 col-lg-6 col-xl-4">
-          
-          <img class="main-title" src="./res/img/therepublicofyoung.png">
-          
-          <a href="#">
-            <img src="./res/img/button1.png">
-          </a>  
-          <a a href="#">
-            <img src="./res/img/button2.png">
-          </a>  
-          <a a href="#">
-            <img src="./res/img/button3.png">
-          </a>
-        </div>
-      </div>
 
-
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div>
-    	<div id="player"></div>
-	  </div>
+    
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
@@ -59,7 +54,7 @@
       //    after the API code downloads.
       var player;
       function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
+        player = new YT.Player('video-player', {
           //height: '360',
           //width: '640',
           videoId: '1NS1yxYX6IM',
@@ -91,10 +86,10 @@
         player.stopVideo();
       }
     </script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./res/js/main.js"></script>
   </body>
 </html>

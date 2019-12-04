@@ -13,6 +13,13 @@ body {
 }
 
 .main-title {
-    margin-top: 100px;
-    margin-bottom: 40px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.popup {
+    width: 100%;
+}
+
+.video-area {
 }
