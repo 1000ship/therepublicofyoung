@@ -3,6 +3,10 @@ body {
     background-size: cover;
 }
 
+body::after {
+    content: url("../img/lavender.gif") url("../img/water.gif");
+}
+
 body[class="water"] {
     background-image: url("../img/water.gif");
     background-position: unset;
