@@ -23,18 +23,18 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-// $(function() {
-//     $.ajax({
-//         url:'../../text.txt',
-//         type:'get',
-//         dataType:'text',
-//         success: function(data) {
-//             //서버로부터 정상적으로 응답이 왔을 때 실행
-//             alert(1)
-//         },
-//         error: function(err) {
-//             //서버로부터 응답이 정상적으로 처리되지 못햇을 때 실행
-//             alert(2)
-//         }
-//     });
-// });
+$(function() {
+    $.ajax({
+        url:'https://1000ship.github.io/youtube-live-code.txt',
+        type:'get',
+        dataType:'text',
+        success: function(data) {
+            //서버로부터 정상적으로 응답이 왔을 때 실행
+            alert(1)
+        },
+        error: function(err) {
+            //서버로부터 응답이 정상적으로 처리되지 못햇을 때 실행
+            alert(2)
+        }
+    });
+});
