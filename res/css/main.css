@@ -33,11 +33,11 @@ body[class="lavender"] {
     width: 100%;
 }
 
-.video-container {
+.video-container, .live-container {
     height: 100vh;
 }
 
-.video-area {
+.video-area, .live-area {
     position: relative;
     top: 50%;
     transform: translate(0%, -80%);

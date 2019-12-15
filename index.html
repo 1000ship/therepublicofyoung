@@ -3,7 +3,7 @@
 	<head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./res/css/main.css"/>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script   src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
@@ -11,6 +11,10 @@
         if( location.hash != "#video" )
           if(youtube_player)
             youtube_player.stopVideo();
+        
+        if( location.hash != "#live" )
+          if(live_player)
+            live_player.stopVideo();
 
         if( location.hash.length == 0 )
         {
@@ -25,13 +29,18 @@
           switch( location.hash )
           {
             case "#main":
-                $('#carousel').carousel(1);
-                break;
+              $('#carousel').carousel(1);
+              break;
             case "#video":
-                $('#carousel').carousel(2);
-                if(youtube_player)
-                  youtube_player.playVideo();
-                break;
+              $('#carousel').carousel(2);
+              if(youtube_player)
+                youtube_player.playVideo();
+              break;
+            case "#live":
+              $('#carousel').carousel(3);
+              if(live_player)
+                live_player.playVideo();
+              break;
           }
         }
       }
@@ -61,7 +70,7 @@
                 <a href="#video" onclick="locationHashChanged();">
                   <img src="./res/img/button1.png">
                 </a>  
-                <a a href="#second" onclick="locationHashChanged();">
+                <a a href="#live" onclick="locationHashChanged();">
                   <img src="./res/img/button2.png">
                 </a>  
                 <a a href="https://tumblbug.com/therepublicofyoung" target="_blank">
@@ -77,6 +86,17 @@
                 <img class="popup" src="./res/img/popup1.png">
                 <div class="video-area align-middle embed-responsive embed-responsive-16by9">
                     <div id="video-player" class="embed-responsive-item"></div>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+          <div id="video-page" class="row justify-content-center">
+              <div class="live-container col-sm-12 col-md-12 col-lg-6 col-xl-4">
+                <img class="popup" src="./res/img/popup1.png">
+                <div class="live-area align-middle embed-responsive embed-responsive-16by9">
+                    <div id="live-player" class="embed-responsive-item"></div>
                   </div>
               </div>
             </div>
