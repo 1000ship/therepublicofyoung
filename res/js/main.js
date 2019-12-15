@@ -17,7 +17,7 @@ function loadYoutube ()
     });
 
     live_player = new YT.Player('live-player', {
-        videoId: 'fnh4V3u9lA4',
+        videoId: live_code,
         playerVars: {'autoplay':0, 'controls': 0},
     });
 }
@@ -39,6 +39,7 @@ $(function() {
         url:'https://1000ship.github.io/youtube-live-code.txt',
         type:'get',
         dataType:'text',
+        cache : false,
         success: function(data) {
             //서버로부터 정상적으로 응답이 왔을 때 실행
             live_code = data;
