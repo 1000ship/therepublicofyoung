@@ -36,7 +36,7 @@ function onYouTubeIframeAPIReady() {
 
 $(function() {
     $.ajax({
-        url:'https://1000ship.github.io/youtube-live-code.txt',
+        url:'https://jiwonroh67.github.io/youtube-live-code.txt',
         type:'get',
         dataType:'text',
         cache : false,
