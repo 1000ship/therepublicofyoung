@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QRCODE</title>
+
+        <link href="assets/css/styles.css" type="text/css" rel="stylesheet"/>
+        <script type="text/javascript" src="assets/js/grid.js"></script>
+        <script type="text/javascript" src="assets/js/version.js"></script>
+        <script type="text/javascript" src="assets/js/detector.js"></script>
+        <script type="text/javascript" src="assets/js/formatinf.js"></script>
+        <script type="text/javascript" src="assets/js/errorlevel.js"></script>
+        <script type="text/javascript" src="assets/js/bitmat.js"></script>
+        <script type="text/javascript" src="assets/js/datablock.js"></script>
+        <script type="text/javascript" src="assets/js/bmparser.js"></script>
+        <script type="text/javascript" src="assets/js/datamask.js"></script>
+        <script type="text/javascript" src="assets/js/rsdecoder.js"></script>
+        <script type="text/javascript" src="assets/js/gf256poly.js"></script>
+        <script type="text/javascript" src="assets/js/gf256.js"></script>
+        <script type="text/javascript" src="assets/js/decoder.js"></script>
+        <script type="text/javascript" src="assets/js/qrcode.js"></script>
+        <script type="text/javascript" src="assets/js/findpat.js"></script>
+        <script type="text/javascript" src="assets/js/alignpat.js"></script>
+        <script type="text/javascript" src="assets/js/databr.js"></script>
+    </head>
+
+    <body>
+        <script>
+            function checkHongik (code) {
+                //0 B611202 1 2020 01 06 14 17 16 ab383a1e7f485d161be22ed6185590a2
+                console.log(code);
+                return code.substr(1,7);
+            }
+
+            function openQRCamera(node) {
+                reader.readAsDataURL(node.files[0]);
+            }
+
+            var reader = new FileReader();
+            reader.onload = function() {
+                // node.value = "";
+                qrcode.callback = function(res) {
+                    if(res instanceof Error) {
+                        alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+                    } else {
+                        document.getElementsByClassName("qrcode-text")[0].value = checkHongik(res);
+                    }
+                };
+                qrcode.decode(reader.result);
+            };
+        </script>
+
+        <input type=text size=16 placeholder="Tracking Code" class=qrcode-text>
+        <label class=qrcode-text-btn>
+            <input type=file accept="image/*" capture=environment onchange="openQRCamera(this);">
+        </label>
+
+    </body>
+
+</html>
