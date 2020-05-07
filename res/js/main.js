@@ -12,7 +12,7 @@ function loadYoutube ()
     if(!youtubeLoaded || !ajaxLoaded)
         return;
     youtube_player = new YT.Player('video-player', {
-        videoId: '1NS1yxYX6IM',
+        videoId: 'Qf02w83lEBk',
         playerVars: {'autoplay':0, 'controls': 0},
     });
 
