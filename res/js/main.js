@@ -16,10 +16,11 @@ function loadYoutube ()
         playerVars: {'autoplay':0, 'controls': 0},
     });
 
-    // live_player = new YT.Player('live-player', {
-    //     videoId: live_code,
-    //     playerVars: {'autoplay':0, 'controls': 0},
-    // });
+    
+    live_player = new YT.Player('live-player', {
+        videoId: live_code,
+        playerVars: {'autoplay':0, 'controls': 0},
+    });
 }
 
 // for youtube
@@ -42,7 +43,7 @@ $(function() {
         cache : false,
         success: function(data) {
             //서버로부터 정상적으로 응답이 왔을 때 실행
-            live_code = data.trim();
+            live_code = data;
             ajaxLoaded = true;
             loadYoutube();
         },
